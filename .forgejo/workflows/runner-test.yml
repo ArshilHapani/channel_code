@@ -1,0 +1,16 @@
+name: Runner Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify runner
+        run: |
+          echo "Forgejo runner is working"
+          uname -a
+          whoami
