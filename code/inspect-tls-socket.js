@@ -18,6 +18,7 @@ function inspectTlsHandshake(targetHost) {
     console.log("Protocol:", protocolVersion);
     console.log("Cipher Suite:", cipherSuite.name);
     console.log("Negotiated Key Exchange:", ephemeralKey);
+    console.log("\n");
 
     clientSocket.end();
   });
@@ -27,5 +28,7 @@ function inspectTlsHandshake(targetHost) {
   });
 }
 
-// Connect to a public Cloudflare edge supporting hybrid post-quantum groups
+// Connect to a public domains
+inspectTlsHandshake("cloudflare.com");
 inspectTlsHandshake("google.com");
+inspectTlsHandshake("arshil.cc");
